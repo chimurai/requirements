@@ -1,0 +1,39 @@
+#! /usr/bin/env node
+
+const fs = require('fs');
+const stripJsonComments = require('strip-json-comments');
+const {checkSoftware} = require('../lib/check-software-requirements.js');
+
+let argv = require('yargs')
+    .options({
+      'c': {
+        alias: 'config',
+        default: undefined,
+        describe: 'Use custom configuration file',
+        type: 'string'
+      }
+    })
+    .version(function() {
+        return require('../package.json').version;
+    })
+    .alias('v', 'version')
+    .help()
+    .alias('h', 'help')
+    .argv;
+
+if (argv.config) {
+
+    let path = argv.config;
+
+    fs.readFile(path, 'utf8', function(err, data) {
+        if (err) throw err;
+        let configuration = JSON.parse(stripJsonComments(data));
+        checkSoftware(configuration);
+    });
+
+
+} else {
+    checkSoftware();
+}
+
+

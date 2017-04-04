@@ -1,0 +1,20 @@
+{
+  "software": {
+    "java": ">= 1.7.x",
+    "node": ">= 5.x",
+    "npm": ">= 3.x",
+    "cordova": "^6.x",
+    "ionic": "^2.x",
+    "bower": "^1.x",
+    "xcode-select": "*",
+    "xcodeproj": "^1.x",
+    "ios-deploy": "^1.x",
+    "adb": "*",
+    "gulp": "^3.x",
+    "git": "^2.x",
+    "brew": "^1.x",
+    "jscs": "^3.x",
+    "eslint": "^3.x",
+    "yarn": "^0.x"
+  }
+}
