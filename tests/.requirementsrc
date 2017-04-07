@@ -6,7 +6,6 @@
     "cordova": "^6.x",
     "ionic": "^2.x",
     "bower": "^1.x",
-    "xcode-select": "*",
     "xcodeproj": "^1.x",
     "ios-deploy": "^1.x",
     "adb": "*",
