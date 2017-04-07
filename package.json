@@ -1,6 +1,6 @@
 {
   "name": "requirements",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "software version requirements checker",
   "main": "index.js",
   "scripts": {
