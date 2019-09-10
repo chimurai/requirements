@@ -1,54 +1,96 @@
 # requirements
 
-Keep your software requirements in sync.
-
-Simple way to see if installed software meet the requirements for a project or team.
+Validate your project's software requirements.
 
 ![requirements-screenshot](https://github.com/chimurai/requirements/blob/master/docs/screenshot.png)
 
 # install
 
 ```bash
-$ npm install -g requirements
+$ npm install -D requirements
+```
+
+```bash
+$ yarn add --dev requirements
 ```
 
 # config
 
-Create a `.requirementsrc` file with the configuration in your project root.
+Create a `requirements.config.js` file with the configuration in your project root.
 
-```json
-{
-  "software": {
-
-    "java": ">= 1.7.x",
-
-    // Apache Maven - https://maven.apache.org/install.html
-    "mvn": "^4.x",
-    "node": ">= 5.x",
-    "npm": ">= 3.x",
-    "eslint": "^3.x",
-    "yarn": "^0.x"
+```js
+module.exports = {
+  software: {
+    node: "*",
+    yarn: "~1.17.3",
+    nginx: ">= 1.16.x",
+    httpd: {
+      semver: "^1.x",
+      flag: "-v" // custom version flag
+    }
   }
-}
-
+};
 ```
 
 # check requirements
 
-Run `requirements` command in the project root. By default it will try to find the `.requirementsrc` file. ([more info](https://www.npmjs.com/package/rc#standards))
+Run `requirements` command in the project root. By default it will try to find the `requirements.config.js` file.
 
 ```bash
-$ requirements
+$ npx requirements
 ```
 
 Or use a custom path:
 
 ```bash
-$ requirements --config=<filepath>
+$ npx requirements --config=<filepath>
+```
+
+# CLI options
+
+```bash
+$ npx requirements --help
+```
+
+```
+Options:
+  --help, -h     Show help                                             [boolean]
+  --version, -v  Show version number                                   [boolean]
+  --config, -c   Path to the configuration file
+                                             [default: "requirements.config.js"]
+  --force, -f    Succeeds even if not all requirements are satisfied
+                                                      [boolean] [default: false]
+  --quiet, -q    Only output when errors are present                   [boolean]
+  --debug        Print raw data                                        [boolean]
+```
+
+# require('requirements')
+
+```javascript
+const { checkSoftware, renderTable } = require("requirements");
+
+(async () => {
+  const result = await checkSoftware({ node: "*" });
+  console.log(renderTable(result));
+})();
+```
+
+checkSoftware() returns an Array with results
+
+```javascript
+[
+  {
+    bin: "node",
+    semver: "*",
+    installed: true,
+    version: "12.8.1",
+    satisfies: true
+  }
+];
 ```
 
 # license
 
 The MIT License (MIT)
 
-Copyright (c) 2017 Steven Chim
+Copyright (c) 2017-2019 Steven Chim

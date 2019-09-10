@@ -1,17 +1,15 @@
 {
   "name": "requirements",
-  "version": "0.0.1",
-  "description": "software version requirements checker",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "chimurai",
+  "homepage": "https://github.com/chimurai/requirements",
+  "bugs": {
+    "url": "https://github.com/chimurai/requirements/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/chimurai/requirements.git"
-  },
-  "bin": {
-    "requirements": "./bin/requirements"
   },
   "keywords": [
     "requirements",
@@ -19,24 +17,39 @@
     "version",
     "checker"
   ],
-  "author": "chimurai",
-  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "bin": {
+    "requirements": "./bin/requirements.js"
+  },
+  "scripts": {
+    "clean": "rm -rf dist && rm -rf coverage",
+    "build": "tsc",
+    "lint": "prettier --check \"**/*.{js,ts,md}\" || echo '🔧  Run: \"npm run lint:fix\" to fix issues'",
+    "lint:fix": "prettier --write \"**/*.{js,ts,md}\"",
+    "test": "jest"
+  },
   "dependencies": {
-    "bin-version": "^2.0.0",
-    "chalk": "^1.1.3",
-    "cli-table": "^0.3.1",
-    "log-symbols": "^1.0.2",
-    "rc": "^1.1.7",
-    "semver": "^5.3.0",
-    "strip-json-comments": "^2.0.1",
-    "which": "^1.2.14",
-    "yargs": "^7.0.2"
+    "bin-version": "^4.0.0",
+    "chalk": "^2.4.2",
+    "lodash": "^4.17.15",
+    "log-symbols": "^3.0.0",
+    "semver": "^6.3.0",
+    "table": "^5.4.6",
+    "yargs": "^14.0.0"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^3.2.0"
-  },
-  "engines": {
-    "node": ">=4"
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.4",
+    "@types/yargs": "^13.0.2",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.2"
   }
 }
