@@ -65,14 +65,20 @@ function getArgv() {
 
 function getConfiguration(argv): Configuration {
   const cwd = process.cwd();
+  const configPath = argv.config;
   let pathConfiguration;
 
   const isAbsoluteConfigPath =
-    argv.config && /^[~/]/.exec(argv.config as string) ? true : false;
+    configPath && /^[~/]/.exec(configPath as string) ? true : false;
+
   if (isAbsoluteConfigPath) {
-    pathConfiguration = argv.config;
+    const homeDir = require("os").homedir();
+    pathConfiguration =
+      configPath[0] === "~"
+        ? path.join(homeDir, configPath.slice(1))
+        : configPath;
   } else {
-    pathConfiguration = path.join(cwd, argv.config as string);
+    pathConfiguration = path.join(cwd, configPath as string);
   }
 
   try {
