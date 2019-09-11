@@ -21,12 +21,12 @@ Create a `requirements.config.js` file with the configuration in your project ro
 ```js
 module.exports = {
   software: {
-    node: "*",
-    yarn: "~1.17.3",
-    nginx: ">= 1.16.x",
+    node: '*',
+    yarn: '~1.17.3',
+    nginx: '>= 1.16.x',
     httpd: {
-      semver: "^1.x",
-      flag: "-v" // custom version flag
+      semver: '^1.x',
+      flag: '-v' // custom version flag
     }
   }
 };
@@ -67,10 +67,10 @@ Options:
 # require('requirements')
 
 ```javascript
-const { checkSoftware, renderTable } = require("requirements");
+const { checkSoftware, renderTable } = require('requirements');
 
 (async () => {
-  const result = await checkSoftware({ node: "*" });
+  const result = await checkSoftware({ node: '*' });
   console.log(renderTable(result));
 })();
 ```
@@ -80,10 +80,10 @@ checkSoftware() returns an Array with results
 ```javascript
 [
   {
-    bin: "node",
-    semver: "*",
+    bin: 'node',
+    semver: '*',
     installed: true,
-    version: "12.8.1",
+    version: '12.8.1',
     satisfies: true
   }
 ];

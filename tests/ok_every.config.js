@@ -1,5 +1,5 @@
 module.exports = {
   software: {
-    node: "*"
+    node: '*'
   }
 };

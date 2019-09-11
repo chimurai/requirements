@@ -1,9 +1,9 @@
-import * as yargs from "yargs";
-import * as path from "path";
-import { checkSoftware } from "./requirements";
-import * as chalk from "chalk";
-import { renderTable } from "./reporter";
-import { Configuration } from "./types";
+import * as yargs from 'yargs';
+import * as path from 'path';
+import { checkSoftware } from './requirements';
+import * as chalk from 'chalk';
+import { renderTable } from './reporter';
+import { Configuration } from './types';
 
 export async function exec() {
   const argv = getArgv();
@@ -17,8 +17,8 @@ export async function exec() {
   const ALL_OK = rawResults.every(result => result.satisfies === true);
 
   if (argv.debug) {
-    console.debug("[R] raw data:", rawResults);
-    console.debug("[R] yargs:", argv);
+    console.debug('[R] raw data:', rawResults);
+    console.debug('[R] yargs:', argv);
   }
 
   if (!ALL_OK && !argv.force) {
@@ -35,29 +35,29 @@ export async function exec() {
 
 function getArgv() {
   return yargs
-    .help("help")
-    .alias("help", "h")
-    .version("version", require("../package.json").version)
-    .alias("version", "v")
+    .help('help')
+    .alias('help', 'h')
+    .version('version', require('../package.json').version)
+    .alias('version', 'v')
     .options({
       config: {
-        description: "Path to the configuration file",
-        default: "requirements.config.js",
-        alias: "c"
+        description: 'Path to the configuration file',
+        default: 'requirements.config.js',
+        alias: 'c'
       },
       force: {
-        description: "Succeeds even if not all requirements are satisfied",
+        description: 'Succeeds even if not all requirements are satisfied',
         default: false,
         boolean: true,
-        alias: "f"
+        alias: 'f'
       },
       quiet: {
-        description: "Only output when errors are present",
+        description: 'Only output when errors are present',
         boolean: true,
-        alias: "q"
+        alias: 'q'
       },
       debug: {
-        description: "Print raw data",
+        description: 'Print raw data',
         boolean: true
       }
     }).argv;
@@ -68,15 +68,12 @@ function getConfiguration(argv): Configuration {
   const configPath = argv.config;
   let pathConfiguration;
 
-  const isAbsoluteConfigPath =
-    configPath && /^[~/]/.exec(configPath as string) ? true : false;
+  const isAbsoluteConfigPath = configPath && /^[~/]/.exec(configPath as string) ? true : false;
 
   if (isAbsoluteConfigPath) {
-    const homeDir = require("os").homedir();
+    const homeDir = require('os').homedir();
     pathConfiguration =
-      configPath[0] === "~"
-        ? path.join(homeDir, configPath.slice(1))
-        : configPath;
+      configPath[0] === '~' ? path.join(homeDir, configPath.slice(1)) : configPath;
   } else {
     pathConfiguration = path.join(cwd, configPath as string);
   }
@@ -84,8 +81,6 @@ function getConfiguration(argv): Configuration {
   try {
     return require(pathConfiguration);
   } catch (err) {
-    throw new Error(
-      `[R] Could not find configuration file: '${pathConfiguration}'`
-    );
+    throw new Error(`[R] Could not find configuration file: '${pathConfiguration}'`);
   }
 }
