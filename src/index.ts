@@ -1,4 +1,4 @@
-import { checkSoftware } from "./requirements";
-import { renderTable } from "./reporter";
+import { checkSoftware } from './requirements';
+import { renderTable } from './reporter';
 
 export { checkSoftware, renderTable };

@@ -1,10 +1,8 @@
-import * as binVersion from "bin-version";
-import * as semver from "semver";
-import { RawResult, SoftwareConfiguration } from "./types";
+import * as binVersion from 'bin-version';
+import * as semver from 'semver';
+import { RawResult, SoftwareConfiguration } from './types';
 
-export async function checkSoftware(
-  software: SoftwareConfiguration = {}
-): Promise<RawResult[]> {
+export async function checkSoftware(software: SoftwareConfiguration = {}): Promise<RawResult[]> {
   const softwareList = normalizeConfig(software);
   const softwareData = await getVersionData(softwareList);
   const softwareSatisifies = satisifies(softwareData);
@@ -24,18 +22,14 @@ export function satisifies(entries = []): RawResult[] {
   });
 }
 
-export async function getVersionData(
-  softwareList: RawResult[] = []
-): Promise<RawResult[]> {
+export async function getVersionData(softwareList: RawResult[] = []): Promise<RawResult[]> {
   const results: RawResult[] = [];
 
   for (const software of softwareList) {
     let result: RawResult = { ...software };
 
     try {
-      const maybeBinVersionArgs = software.flag
-        ? { args: [software.flag] }
-        : undefined;
+      const maybeBinVersionArgs = software.flag ? { args: [software.flag] } : undefined;
       const version = await binVersion(software.bin, maybeBinVersionArgs);
       result = { ...result, installed: true, version };
     } catch (err) {
@@ -52,8 +46,7 @@ export function normalizeConfig(software: SoftwareConfiguration): RawResult[] {
   const results: RawResult[] = [];
 
   for (const [bin, semver] of Object.entries(software)) {
-    const item =
-      typeof semver === "string" ? { bin, semver } : { bin, ...semver };
+    const item = typeof semver === 'string' ? { bin, semver } : { bin, ...semver };
     results.push(item as RawResult);
   }
 

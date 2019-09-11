@@ -1,9 +1,9 @@
 module.exports = {
   software: {
-    node: "*",
+    node: '*',
     httpd: {
-      semver: "^1.x",
-      flag: "-v"
+      semver: '^1.x',
+      flag: '-v'
     }
   }
 };

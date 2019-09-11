@@ -6,9 +6,7 @@ export interface SoftwareConfiguration {
   [bin: string]: ConfigurationValue;
 }
 
-export type ConfigurationValue =
-  | ConfigurationStringValue
-  | ConfigurationObjectValue;
+export type ConfigurationValue = ConfigurationStringValue | ConfigurationObjectValue;
 
 export type ConfigurationStringValue = string;
 
