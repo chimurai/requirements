@@ -1,11 +1,10 @@
 import { table, getBorderCharacters } from 'table';
 import * as logSymbols from 'log-symbols';
 import chalk from 'chalk';
-import * as sortBy from 'lodash/sortBy';
 import { RawResult } from './types';
 
-export function renderTable(rawResults: RawResult[]) {
-  let results = sortBy(rawResults, ['installed', 'satisfies']).map(item => {
+export function renderTable(rawResults: RawResult[] = []) {
+  let results = rawResults.map(item => {
     const { bin, semver, installed, version, satisfies } = item;
 
     return {

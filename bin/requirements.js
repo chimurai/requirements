@@ -7,6 +7,6 @@ const { exec } = require('../dist/bin');
   try {
     await exec();
   } catch (err) {
-    console.error(`${chalk.red(err.toString())}`);
+    console.error(`${chalk.red(err.message)}`);
   }
 })();

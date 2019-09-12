@@ -1,7 +1,6 @@
 import * as yargs from 'yargs';
 import * as path from 'path';
 import { checkSoftware } from './requirements';
-import * as chalk from 'chalk';
 import { renderTable } from './reporter';
 import { Configuration } from './types';
 
@@ -9,7 +8,7 @@ export async function exec() {
   const argv = getArgv();
 
   if (!argv.quiet) {
-    console.log(`[R] Checking software requirements...`);
+    console.log(`🔍  Checking software requirements...`);
   }
 
   const config = getConfiguration(argv);
@@ -17,19 +16,27 @@ export async function exec() {
   const ALL_OK = rawResults.every(result => result.satisfies === true);
 
   if (argv.debug) {
-    console.debug('[R] raw data:', rawResults);
-    console.debug('[R] yargs:', argv);
+    console.debug('👀  RAW data:\n', rawResults);
+    console.debug('👀  yargs:\n', argv);
   }
 
   if (!ALL_OK && !argv.force) {
     console.error(renderTable(rawResults));
-    throw new Error(`[R] Not all requirements are satisfied`);
+    throw new Error(`❌  Not all requirements are satisfied`);
   }
 
   if (argv.quiet && ALL_OK) {
     // silent
   } else {
     console.log(renderTable(rawResults));
+  }
+
+  if (!argv.quiet && ALL_OK) {
+    console.log(`✅  All is well!`);
+  }
+
+  if (argv.force && !ALL_OK) {
+    console.log(`⚠️  Not all requirements are satisfied (--force)`);
   }
 }
 
@@ -81,6 +88,6 @@ function getConfiguration(argv): Configuration {
   try {
     return require(pathConfiguration);
   } catch (err) {
-    throw new Error(`[R] Could not find configuration file: '${pathConfiguration}'`);
+    throw new Error(`❌  Could not find configuration file: '${pathConfiguration}'`);
   }
 }
