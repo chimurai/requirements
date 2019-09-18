@@ -1,5 +1,6 @@
 import * as yargs from 'yargs';
 import * as path from 'path';
+import chalk from 'chalk';
 import { checkSoftware } from './requirements';
 import { renderTable } from './reporter';
 import { Configuration } from './types';
@@ -88,6 +89,6 @@ function getConfiguration(argv): Configuration {
   try {
     return require(pathConfiguration);
   } catch (err) {
-    throw new Error(`❌  Could not find configuration file: '${pathConfiguration}'`);
+    throw new Error(`❌  Unable to find configuration file: '${chalk.bold(pathConfiguration)}'`);
   }
 }

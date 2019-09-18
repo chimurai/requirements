@@ -7,7 +7,7 @@ const { exec } = require('../dist/bin');
   try {
     await exec();
   } catch (err) {
-    console.error(`${chalk.red(err.message)}`);
+    console.error(`${chalk.red('error')} ${chalk.reset(err.message)}`);
     process.exitCode = 1;
   }
 })();
