@@ -31,7 +31,8 @@
     "build": "tsc",
     "lint": "prettier --check \"**/*.{js,ts,md}\" || echo '🔧  Run: \"npm run lint:fix\" to fix issues'",
     "lint:fix": "prettier --write \"**/*.{js,ts,md}\"",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "yarn clean && yarn test && yarn build"
   },
   "dependencies": {
     "bin-version": "^4.0.0",
