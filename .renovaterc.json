@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "recreateClosed": true
+  },
+  "rebaseStalePrs": true,
+  "schedule": ["every sunday"],
+  "timezone": "Europe/Amsterdam"
+}
