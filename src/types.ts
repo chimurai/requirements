@@ -23,4 +23,5 @@ export interface RawResult {
   installed: boolean;
   version?: string;
   satisfies?: boolean;
+  optional?: boolean;
 }

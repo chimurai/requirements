@@ -5,15 +5,19 @@ import { RawResult } from './types';
 
 export function renderTable(rawResults: RawResult[] = []) {
   let results = rawResults.map(item => {
-    const { bin, semver, installed, version, satisfies } = item;
+    const { bin, semver, installed, version, satisfies, optional } = item;
+
+    const pass = satisfies
+    ? `${logSymbols.success} ${chalk.dim('OK')}`
+    : optional
+    ? `${logSymbols.warning} ${chalk.dim('NOK (optional)')}`
+    : `${logSymbols.error} ${chalk.dim('NOK')}`;
 
     return {
-      bin,
+      bin: optional ? chalk.dim(`${bin}`) : bin,
       semver: chalk.dim(semver),
       version: installed ? chalk.dim(version) : chalk.dim('not installed'),
-      pass: satisfies
-        ? `${logSymbols.success} ${chalk.dim('OK')}`
-        : `${logSymbols.error} ${chalk.dim('NOK')}`
+      pass
     };
   });
 
