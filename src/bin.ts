@@ -14,7 +14,10 @@ export async function exec() {
 
   const config = getConfiguration(argv);
   let rawResults = await checkSoftware(config.software);
-  const ALL_OK = rawResults.every(result => result.satisfies === true);
+
+  const ALL_OK = rawResults
+    .filter(result => !result.optional)
+    .every(result => result.satisfies === true);
 
   if (argv.debug) {
     console.debug('👀  RAW data:\n', rawResults);

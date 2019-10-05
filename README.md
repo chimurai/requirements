@@ -23,7 +23,10 @@ module.exports = {
   software: {
     node: '*',
     yarn: '~1.17.3',
-    nginx: '>= 1.16.x',
+    nginx: {
+      semver: '>= 1.16.x',
+      optional: true // optional (won't fail)
+    },
     httpd: {
       semver: '^1.x',
       flag: '-v' // custom version flag
