@@ -6,7 +6,10 @@
     "enabled": true,
     "recreateClosed": true
   },
+  "pinVersions": false,
+  "groupName": "all",
+  "separateMajorMinor": "false",
   "rebaseStalePrs": true,
-  "schedule": ["every sunday"],
+  "schedule": ["every weekend"],
   "timezone": "Europe/Amsterdam"
 }
