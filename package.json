@@ -32,6 +32,7 @@
     "lint": "prettier --check \"**/*.{js,ts,md}\" || echo '🔧  Run: \"npm run lint:fix\" to fix issues'",
     "lint:fix": "prettier --write \"**/*.{js,ts,md}\"",
     "test": "jest",
+    "coverage": "jest --coverage --coverageReporters=lcov",
     "prepare": "yarn clean && yarn test && yarn build"
   },
   "dependencies": {
