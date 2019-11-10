@@ -1,6 +1,6 @@
 import * as yargs from 'yargs';
 import * as path from 'path';
-import chalk from 'chalk';
+import * as chalk from 'chalk';
 import { checkSoftware } from './requirements';
 import { renderTable } from './reporter';
 import { Configuration } from './types';
