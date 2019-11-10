@@ -1,6 +1,6 @@
 import { table, getBorderCharacters } from 'table';
 import * as logSymbols from 'log-symbols';
-import chalk from 'chalk';
+import * as chalk from 'chalk';
 import { RawResult } from './types';
 
 export function renderTable(rawResults: RawResult[] = []) {
