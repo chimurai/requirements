@@ -20,9 +20,15 @@ $ npm install -D requirements
 $ yarn add --dev requirements
 ```
 
+# setup
+
+```bash
+$ npx requirements --init
+```
+
 # config
 
-Create a `requirements.config.js` file with the configuration in your project root.
+Configure the `requirements.config.js` file in your project root.
 
 ```js
 module.exports = {
@@ -65,6 +71,7 @@ $ npx requirements --help
 Options:
   --help, -h     Show help                                             [boolean]
   --version, -v  Show version number                                   [boolean]
+  --init, -i     Create a requirements.config.js file
   --config, -c   Path to the configuration file
                                              [default: "requirements.config.js"]
   --force, -f    Succeeds even if not all requirements are satisfied
