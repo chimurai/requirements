@@ -8,7 +8,7 @@
   },
   "pinVersions": false,
   "groupName": "all",
-  "separateMajorMinor": "false",
+  "separateMajorMinor": "true",
   "rebaseStalePrs": true,
   "schedule": ["every weekend"],
   "timezone": "Europe/Amsterdam"
