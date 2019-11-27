@@ -4,9 +4,15 @@ import * as chalk from 'chalk';
 import { checkSoftware } from './requirements';
 import { renderTable } from './reporter';
 import { Configuration } from './types';
+import { scaffold } from './scaffold';
 
 export async function exec() {
   const argv = getArgv();
+
+  if (argv.init) {
+    scaffold();
+    return;
+  }
 
   if (!argv.quiet) {
     console.log(`🔍  Checking software requirements...`);
@@ -51,6 +57,10 @@ function getArgv() {
     .version('version', require('../package.json').version)
     .alias('version', 'v')
     .options({
+      init: {
+        description: 'Create a requirements.config.js file',
+        alias: 'i'
+      },
       config: {
         description: 'Path to the configuration file',
         default: 'requirements.config.js',
