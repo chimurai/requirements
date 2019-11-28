@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as semver from 'semver';
+import * as chalk from 'chalk';
 
 const FILENAME = 'requirements.config.js';
 
@@ -23,6 +24,9 @@ export function scaffold() {
   }
 
   fs.writeFileSync(FILENAME, TEMPLATE);
+
+  const filepath = `${process.cwd()}/${FILENAME}`;
+  console.log(chalk.dim(`Created config: ${filepath}`));
 }
 
 function hasExistingConfig() {
