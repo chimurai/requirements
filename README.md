@@ -8,7 +8,7 @@
 
 Validate your project's software requirements.
 
-![requirements-screenshot](https://github.com/chimurai/requirements/blob/master/docs/screenshot.png)
+![requirements-screenshot](https://raw.githubusercontent.com/chimurai/requirements/master/docs/requirements.gif)
 
 # install
 
