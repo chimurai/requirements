@@ -6,8 +6,8 @@ import { renderTable } from './reporter';
 import { Configuration } from './types';
 import { scaffold } from './scaffold';
 
-export async function exec() {
-  const argv = getArgv();
+export async function exec(_debug_argv_?) {
+  const argv = _debug_argv_ ?? getArgv();
 
   if (argv.init) {
     scaffold();
