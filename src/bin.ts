@@ -2,9 +2,10 @@ import * as yargs from 'yargs';
 import * as path from 'path';
 import * as chalk from 'chalk';
 import { checkSoftware } from './requirements';
-import { renderTable } from './reporter';
+import { renderTable, renderMessages } from './reporter';
 import { Configuration } from './types';
 import { scaffold } from './scaffold';
+import { isAllOK, getMessages } from './results';
 
 export async function exec(_debug_argv_?) {
   const argv = _debug_argv_ ?? getArgv();
@@ -21,9 +22,7 @@ export async function exec(_debug_argv_?) {
   const config = getConfiguration(argv);
   let rawResults = await checkSoftware(config.software);
 
-  const ALL_OK = rawResults
-    .filter(result => !result.optional)
-    .every(result => result.satisfies === true);
+  const ALL_OK = isAllOK(rawResults);
 
   if (argv.debug) {
     console.debug('👀  RAW data:\n', rawResults);
@@ -31,7 +30,9 @@ export async function exec(_debug_argv_?) {
   }
 
   if (!ALL_OK && !argv.force) {
+    const messages = getMessages(rawResults);
     console.error(renderTable(rawResults));
+    console.log(renderMessages(messages));
     throw new Error(`❌  Not all requirements are satisfied`);
   }
 

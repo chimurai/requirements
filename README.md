@@ -22,6 +22,8 @@ $ yarn add --dev requirements
 
 # setup
 
+Scaffold a new `requirements.config.js` configuration file
+
 ```bash
 $ npx requirements --init
 ```
@@ -37,7 +39,9 @@ module.exports = {
     yarn: '~1.17.3',
     nginx: {
       semver: '>= 1.16.x',
-      optional: true // optional (won't fail)
+      optional: true, // optional (won't fail)
+      installMessage: '<install instruction>', // custom message when binary is not found
+      updateMessage: '<update instruction>' // custom message when binary has wrong version
     },
     httpd: {
       semver: '^1.x',
@@ -58,7 +62,7 @@ $ npx requirements
 Or use a custom path:
 
 ```bash
-$ npx requirements --config=<filepath>
+$ npx requirements --config <filepath>
 ```
 
 # CLI options
@@ -105,8 +109,19 @@ checkSoftware() returns an Array with results
 ];
 ```
 
+# testing
+
+```bash
+# test functionality
+yarn build
+node bin/requirements.js --config tests/requirements.config.js
+
+# unit tests
+yarn test
+```
+
 # license
 
 The MIT License (MIT)
 
-Copyright (c) 2017-2019 Steven Chim
+Copyright (c) 2017-2020 Steven Chim
