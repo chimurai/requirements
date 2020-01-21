@@ -19,17 +19,17 @@ export function renderTable(rawResults: RawResult[] = []) {
 
     return {
       bin: optional ? chalk.dim(`${bin}`) : bin,
-      semver: chalk.dim(semver),
       version: installed ? chalk.dim(version) : chalk.dim('not installed'),
-      pass
+      pass,
+      semver: chalk.dim(semver)
     };
   });
 
-  const tableHeaders = [['software', 'required', 'installed', 'passes']];
+  const tableHeaders = [['software', 'installed', 'passes', 'required']];
 
   const tableRows = results.map(item => {
-    const { bin, semver, version, pass } = item;
-    return [bin, semver, version, pass];
+    const { bin, version, pass, semver } = item;
+    return [bin, version, pass, semver];
   });
 
   const tableConfig = {
