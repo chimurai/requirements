@@ -10,18 +10,17 @@ export type ConfigurationValue = ConfigurationStringValue | ConfigurationObjectV
 
 export type ConfigurationStringValue = string;
 
-export type ConfigurationObjectValue = {
+export interface ConfigurationObjectValue {
   semver: string;
   flag: string;
   optional?: boolean;
-};
+  installMessage?: string;
+  updateMessage?: string;
+}
 
-export interface RawResult {
+export interface RawResult extends ConfigurationObjectValue {
   bin: string;
-  semver: string;
-  flag: string;
   installed: boolean;
   version?: string;
   satisfies?: boolean;
-  optional?: boolean;
 }

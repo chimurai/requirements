@@ -4,11 +4,15 @@ module.exports = {
     git: '~1.9.4 || 2.0.0 - 2.10.0',
     node: '8 || 10 || 12',
     npm: '>= 6.x',
-    yarn: '>= 1.19.x',
+    yarn: {
+      semver: '1.16.x',
+      updateMessage: `Outdated 'yarn' found. Run 'brew upgrade yarn' to update.`
+    },
     mvn: '^3.x',
     nginx: {
       semver: '^6.x',
-      optional: true
+      optional: true,
+      installMessage: `This project is configured for NGINX but 'nginx' was not found on your path. Run 'brew install nginx' to install.`
     },
     httpd: {
       semver: '^2.x',

@@ -3,6 +3,10 @@ import * as logSymbols from 'log-symbols';
 import * as chalk from 'chalk';
 import { RawResult } from './types';
 
+export function renderMessages(messages: string[] = []) {
+  return messages.map(message => `${chalk.red('❗️')}  ${message}`).join('\n') + '\n';
+}
+
 export function renderTable(rawResults: RawResult[] = []) {
   let results = rawResults.map(item => {
     const { bin, semver, installed, version, satisfies, optional } = item;
