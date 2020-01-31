@@ -56,7 +56,7 @@
   "devDependencies": {
     "@types/jest": "24.9.1",
     "@types/node": "12.12.26",
-    "@types/yargs": "15.0.2",
+    "@types/yargs": "15.0.3",
     "husky": "^4.0.0",
     "jest": "24.9.0",
     "lint-staged": "^10.0.0",
