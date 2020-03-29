@@ -12,7 +12,7 @@ export async function checkSoftware(software: SoftwareConfiguration = {}): Promi
 }
 
 export function satisifies(entries = []): RawResult[] {
-  return entries.map(item => {
+  return entries.map((item) => {
     if (item.installed) {
       const satisfies = semver.satisfies(item.version, item.semver);
       return { ...item, satisfies };

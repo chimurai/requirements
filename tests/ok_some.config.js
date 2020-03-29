@@ -3,7 +3,7 @@ module.exports = {
     node: '*',
     httpd: {
       semver: '^1.x',
-      flag: '-v'
-    }
-  }
+      flag: '-v',
+    },
+  },
 };

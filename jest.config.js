@@ -2,5 +2,5 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   testPathIgnorePatterns: ['<rootDir>/dist/'],
-  collectCoverageFrom: ['src/*.ts']
+  collectCoverageFrom: ['src/*.ts'],
 };

@@ -17,7 +17,7 @@ describe('requirements', () => {
 
     it('should check for valid software with flag', async () => {
       const softwareConfig: SoftwareConfiguration = {
-        node: { semver: '*', flag: '--version' }
+        node: { semver: '*', flag: '--version' },
       };
       const result = await checkSoftware(softwareConfig);
       const [expected] = result;
@@ -45,7 +45,7 @@ describe('requirements', () => {
   describe('normalizeConfig()', () => {
     it('should normalize configuration with semver', () => {
       const softwareConfig: SoftwareConfiguration = {
-        node: '*'
+        node: '*',
       };
       const expected = [{ bin: 'node', semver: '*' }];
 
@@ -54,7 +54,7 @@ describe('requirements', () => {
 
     it('should normalize configuration with semver and custom flag', () => {
       const softwareConfig: SoftwareConfiguration = {
-        httpd: { semver: '*', flag: '-v' }
+        httpd: { semver: '*', flag: '-v' },
       };
       const expected = [{ bin: 'httpd', semver: '*', flag: '-v' }];
 

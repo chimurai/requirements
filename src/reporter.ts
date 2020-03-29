@@ -4,11 +4,11 @@ import * as chalk from 'chalk';
 import { RawResult } from './types';
 
 export function renderMessages(messages: string[] = []) {
-  return messages.map(message => `${chalk.red('❗️')}  ${message}`).join('\n') + '\n';
+  return messages.map((message) => `${chalk.red('❗️')}  ${message}`).join('\n') + '\n';
 }
 
 export function renderTable(rawResults: RawResult[] = []) {
-  let results = rawResults.map(item => {
+  let results = rawResults.map((item) => {
     const { bin, semver, installed, version, satisfies, optional } = item;
 
     const pass = satisfies
@@ -21,19 +21,19 @@ export function renderTable(rawResults: RawResult[] = []) {
       bin: optional ? chalk.dim(`${bin}`) : bin,
       version: installed ? chalk.dim(version) : chalk.dim('not installed'),
       pass,
-      semver: chalk.dim(semver)
+      semver: chalk.dim(semver),
     };
   });
 
   const tableHeaders = [['software', 'installed', 'passes', 'required']];
 
-  const tableRows = results.map(item => {
+  const tableRows = results.map((item) => {
     const { bin, version, pass, semver } = item;
     return [bin, version, pass, semver];
   });
 
   const tableConfig = {
-    border: getColouredBorderCharacters('norc', 'dim')
+    border: getColouredBorderCharacters('norc', 'dim'),
   };
 
   return table([...tableHeaders, ...tableRows], tableConfig);

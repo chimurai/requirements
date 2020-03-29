@@ -8,8 +8,8 @@ describe('results', () => {
       const rawResults: RawResult[] = [
         {
           bin: 'mvn',
-          satisfies: true
-        } as RawResult
+          satisfies: true,
+        } as RawResult,
       ];
 
       const result = isAllOK(rawResults);
@@ -20,8 +20,8 @@ describe('results', () => {
       const rawResults: RawResult[] = [
         {
           bin: 'mvn',
-          satisfies: false
-        } as RawResult
+          satisfies: false,
+        } as RawResult,
       ];
 
       const result = isAllOK(rawResults);
@@ -35,13 +35,13 @@ describe('results', () => {
         {
           bin: 'mvn',
           installed: false,
-          installMessage: '<mvn install instructions>'
+          installMessage: '<mvn install instructions>',
         } as RawResult,
         {
           bin: 'nginx',
           satisfies: false,
-          updateMessage: '<nginx update instructions>'
-        } as RawResult
+          updateMessage: '<nginx update instructions>',
+        } as RawResult,
       ];
 
       const result = getMessages(rawResults);

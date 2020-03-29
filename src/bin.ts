@@ -60,28 +60,28 @@ function getArgv() {
     .options({
       init: {
         description: 'Create a requirements.config.js file',
-        alias: 'i'
+        alias: 'i',
       },
       config: {
         description: 'Path to the configuration file',
         default: 'requirements.config.js',
-        alias: 'c'
+        alias: 'c',
       },
       force: {
         description: 'Succeeds even if not all requirements are satisfied',
         default: false,
         boolean: true,
-        alias: 'f'
+        alias: 'f',
       },
       quiet: {
         description: 'Only output when errors are present',
         boolean: true,
-        alias: 'q'
+        alias: 'q',
       },
       debug: {
         description: 'Print raw data',
-        boolean: true
-      }
+        boolean: true,
+      },
     }).argv;
 }
 

@@ -41,13 +41,13 @@ module.exports = {
       semver: '>= 1.16.x',
       optional: true, // optional (won't fail)
       installMessage: '<install instruction>', // custom message when binary is not found
-      updateMessage: '<update instruction>' // custom message when binary has wrong version
+      updateMessage: '<update instruction>', // custom message when binary has wrong version
     },
     httpd: {
       semver: '^1.x',
-      flag: '-v' // custom version flag
-    }
-  }
+      flag: '-v', // custom version flag
+    },
+  },
 };
 ```
 
@@ -104,8 +104,8 @@ checkSoftware() returns an Array with results
     semver: '*',
     installed: true,
     version: '12.8.1',
-    satisfies: true
-  }
+    satisfies: true,
+  },
 ];
 ```
 
