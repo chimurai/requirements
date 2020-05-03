@@ -33,8 +33,9 @@
     "lint:fix": "prettier --write \"**/*.{js,ts,md}\"",
     "test": "jest",
     "coverage": "jest --coverage --coverageReporters=lcov",
-    "prepare": "yarn clean && yarn test && yarn build",
-    "gitignore:update": "curl https://www.gitignore.io/api/node --silent > .temp && cat tools/dotgitignore | cat - .temp > .gitignore && rm .temp"
+    "prepare": "yarn run snyk-protect && yarn clean && yarn test && yarn build",
+    "gitignore:update": "curl https://www.gitignore.io/api/node --silent > .temp && cat tools/dotgitignore | cat - .temp > .gitignore && rm .temp",
+    "snyk-protect": "snyk protect"
   },
   "husky": {
     "hooks": {
@@ -52,7 +53,8 @@
     "log-symbols": "^4.0.0",
     "semver": "^7.0.0",
     "table": "^5.4.6",
-    "yargs": "^15.0.0"
+    "yargs": "^15.0.0",
+    "snyk": "^1.316.2"
   },
   "devDependencies": {
     "@types/jest": "25.2.1",
@@ -65,5 +67,6 @@
     "ts-jest": "25.3.1",
     "ts-node": "8.8.2",
     "typescript": "3.8.3"
-  }
+  },
+  "snyk": true
 }
