@@ -24,3 +24,8 @@ export interface RawResult extends ConfigurationObjectValue {
   version?: string;
   satisfies?: boolean;
 }
+
+export interface Message {
+  bin: string;
+  message: string;
+}

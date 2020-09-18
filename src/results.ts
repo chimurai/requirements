@@ -1,4 +1,4 @@
-import { RawResult } from './types';
+import { RawResult, Message } from './types';
 
 export function isAllOK(rawResults: RawResult[]) {
   return rawResults
@@ -6,14 +6,16 @@ export function isAllOK(rawResults: RawResult[]) {
     .every((result) => result.satisfies === true);
 }
 
-export function getMessages(rawResults: RawResult[]) {
+export function getMessages(rawResults: RawResult[]): Message[] {
   const notInstalledItems = rawResults.filter((item) => !item.installed && item.installMessage);
   const unsatisfiedInstalledItems = rawResults.filter(
     (item) => !item.satisfies && item.updateMessage
   );
 
   const messages = [...notInstalledItems, ...unsatisfiedInstalledItems].map((item) => {
-    return item.installMessage || item.updateMessage;
+    const bin: string = item.bin;
+    const message: string = item.installMessage || item.updateMessage;
+    return { bin, message };
   });
 
   return messages;
