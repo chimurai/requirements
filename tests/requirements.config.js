@@ -6,13 +6,13 @@ module.exports = {
     npm: '>= 6.x',
     yarn: {
       semver: '1.16.x',
-      updateMessage: `Outdated 'yarn' found. Run 'brew upgrade yarn' to update.`,
+      updateMessage: `Outdated 'yarn' found.\nRun 'brew upgrade yarn' to update.`,
     },
     mvn: '^3.x',
     nginx: {
       semver: '^6.x',
       optional: true,
-      installMessage: `This project is configured for NGINX but 'nginx' was not found on your path. Run 'brew install nginx' to install.`,
+      installMessage: `This project is configured for NGINX but 'nginx' was not found on your path.\nRun 'brew install nginx' to install.`,
     },
     httpd: {
       semver: '^2.x',

@@ -45,7 +45,10 @@ describe('results', () => {
       ];
 
       const result = getMessages(rawResults);
-      const expectation = ['<mvn install instructions>', '<nginx update instructions>'];
+      const expectation = [
+        { bin: 'mvn', message: '<mvn install instructions>' },
+        { bin: 'nginx', message: '<nginx update instructions>' },
+      ];
       expect(result).toEqual(expectation);
     });
   });

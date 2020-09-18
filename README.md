@@ -10,7 +10,7 @@ Validate your project's software requirements.
 
 ![requirements-screenshot](https://raw.githubusercontent.com/chimurai/requirements/master/docs/requirements.gif)
 
-# install
+## install
 
 ```bash
 $ npm install -D requirements
@@ -20,7 +20,7 @@ $ npm install -D requirements
 $ yarn add --dev requirements
 ```
 
-# setup
+## setup
 
 Scaffold a new `requirements.config.js` configuration file
 
@@ -28,7 +28,7 @@ Scaffold a new `requirements.config.js` configuration file
 $ npx requirements --init
 ```
 
-# config
+## config
 
 Configure the `requirements.config.js` file in your project root.
 
@@ -51,7 +51,7 @@ module.exports = {
 };
 ```
 
-# check requirements
+## check requirements
 
 Run `requirements` command in the project root. By default it will try to find the `requirements.config.js` file.
 
@@ -65,7 +65,7 @@ Or use a custom path:
 $ npx requirements --config <filepath>
 ```
 
-# CLI options
+## CLI options
 
 ```bash
 $ npx requirements --help
@@ -84,7 +84,7 @@ Options:
   --debug        Print raw data                                        [boolean]
 ```
 
-# require('requirements')
+## require('requirements')
 
 ```javascript
 const { checkSoftware, renderTable } = require('requirements');
@@ -109,7 +109,7 @@ checkSoftware() returns an Array with results
 ];
 ```
 
-# testing
+## testing
 
 ```bash
 # test functionality
@@ -120,7 +120,7 @@ node bin/requirements.js --config tests/requirements.config.js
 yarn test
 ```
 
-# license
+## license
 
 The MIT License (MIT)
 

@@ -1,10 +1,14 @@
 import { table, getBorderCharacters } from 'table';
 import * as logSymbols from 'log-symbols';
 import * as chalk from 'chalk';
-import { RawResult } from './types';
+import { RawResult, Message } from './types';
 
-export function renderMessages(messages: string[] = []) {
-  return messages.map((message) => `${chalk.red('❗️')}  ${message}`).join('\n') + '\n';
+export function renderMessages(messages: Message[] = []): string {
+  const result = messages.map(({ bin, message }) => {
+    return `${chalk.keyword('orange')(`${bin}`)}:\n${message}\n`;
+  });
+
+  return result.join('\n');
 }
 
 export function renderTable(rawResults: RawResult[] = []) {
