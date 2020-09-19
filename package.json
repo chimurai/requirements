@@ -51,8 +51,8 @@
     "chalk": "^4.0.0",
     "log-symbols": "^4.0.0",
     "semver": "^7.0.0",
-    "table": "^5.4.6",
-    "yargs": "^15.0.0"
+    "table": "^6.0.0",
+    "yargs": "^16.0.0"
   },
   "devDependencies": {
     "@types/jest": "26.0.10",
