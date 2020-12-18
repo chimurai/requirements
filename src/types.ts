@@ -1,9 +1,19 @@
 export interface Configuration {
+  custom?: CustomChecks;
   software: SoftwareConfiguration;
+}
+
+export interface CustomChecks {
+  [bin: string]: CustomCheckValue;
 }
 
 export interface SoftwareConfiguration {
   [bin: string]: ConfigurationValue;
+}
+
+export interface CustomCheckValue {
+  fn: any;
+  errorMessage: string;
 }
 
 export type ConfigurationValue = ConfigurationStringValue | ConfigurationObjectValue;

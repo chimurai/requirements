@@ -1,5 +1,5 @@
 import { SoftwareConfiguration } from '../types';
-import { normalizeConfig, checkSoftware } from '../requirements';
+import { normalizeConfig, checkSoftware } from '../requirements/software';
 
 describe('requirements', () => {
   describe('checkSoftware()', () => {

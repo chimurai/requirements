@@ -1,6 +1,6 @@
 import * as binVersion from 'bin-version';
 import * as semver from 'semver';
-import { RawResult, SoftwareConfiguration } from './types';
+import { RawResult, SoftwareConfiguration } from '../types';
 
 export async function checkSoftware(software: SoftwareConfiguration = {}): Promise<RawResult[]> {
   const softwareList = normalizeConfig(software);

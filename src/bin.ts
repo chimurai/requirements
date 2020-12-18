@@ -1,7 +1,8 @@
 import * as yargs from 'yargs';
 import * as path from 'path';
 import * as chalk from 'chalk';
-import { checkSoftware } from './requirements';
+import { checkSoftware } from './requirements/software';
+import { checkCustom } from './requirements/custom';
 import { renderTable, renderMessages } from './reporter';
 import { Configuration } from './types';
 import { scaffold } from './scaffold';
@@ -15,38 +16,71 @@ export async function exec(_debug_argv_?) {
     return;
   }
 
+  const { custom, software } = getConfiguration(argv);
+
+  /**
+   * Check custom requirements
+   */
+  if (custom) {
+    if (!argv.quiet) {
+      console.log(`🔍  Checking custom requirements... \n`);
+    }
+
+    let customCheckResults = await checkCustom(custom);
+
+    const failedCustomChecks = customCheckResults.filter((item) => !item.passed);
+
+    if (argv.debug) {
+      console.debug('👀  RAW custom check data:\n', customCheckResults);
+    }
+
+    failedCustomChecks.forEach(({ name, errorMessage }) => {
+      console.log(`${chalk.keyword('orange')(`${name}`)}:\n${errorMessage}\n`);
+    });
+
+    if (!failedCustomChecks.length && !argv.quiet) {
+      console.log(`✅  All custom checks are well!\n\n`);
+    }
+
+    if (failedCustomChecks.length && !argv.force) {
+      throw new Error(`❌  Not all custom requirements are satisfied`);
+    }
+  }
+
+  /**
+   * Check software requirements
+   */
   if (!argv.quiet) {
     console.log(`🔍  Checking software requirements...`);
   }
 
-  const config = getConfiguration(argv);
-  let rawResults = await checkSoftware(config.software);
+  let softwareResults = await checkSoftware(software);
 
-  const ALL_OK = isAllOK(rawResults);
+  const ALL_SOFTWARE_OK = isAllOK(softwareResults);
 
   if (argv.debug) {
-    console.debug('👀  RAW data:\n', rawResults);
+    console.debug('👀  RAW data:\n', softwareResults);
     console.debug('👀  yargs:\n', argv);
   }
 
-  if (!ALL_OK && !argv.force) {
-    const messages = getMessages(rawResults);
-    console.error(renderTable(rawResults));
+  if (!ALL_SOFTWARE_OK && !argv.force) {
+    const messages = getMessages(softwareResults);
+    console.error(renderTable(softwareResults));
     console.log(renderMessages(messages));
     throw new Error(`❌  Not all requirements are satisfied`);
   }
 
-  if (argv.quiet && ALL_OK) {
+  if (argv.quiet && ALL_SOFTWARE_OK) {
     // silent
   } else {
-    console.log(renderTable(rawResults));
+    console.log(renderTable(softwareResults));
   }
 
-  if (!argv.quiet && ALL_OK) {
+  if (!argv.quiet && ALL_SOFTWARE_OK) {
     console.log(`✅  All is well!`);
   }
 
-  if (argv.force && !ALL_OK) {
+  if (argv.force && !ALL_SOFTWARE_OK) {
     console.log(`⚠️  Not all requirements are satisfied (--force)`);
   }
 }
