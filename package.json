@@ -34,7 +34,7 @@
     "test": "jest",
     "coverage": "jest --coverage --coverageReporters=lcov",
     "prepare": "yarn clean && yarn test && yarn build",
-    "gitignore:update": "curl https://www.gitignore.io/api/node --silent > .temp && cat tools/dotgitignore | cat - .temp > .gitignore && rm .temp"
+    "gitignore:update": "curl -L https://www.toptal.com/developers/gitignore/api/node --silent > .temp && cat tools/dotgitignore | cat - .temp > .gitignore && rm .temp"
   },
   "lint-staged": {
     "**/*.{js,ts,md}": [

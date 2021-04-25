@@ -1,5 +1,6 @@
 # Genererated with "yarn gitignore:update"
 
-### custom gitignore start
-# <define project ignores here>
-### custom gitignore end
+############### Start: custom gitignore ###############
+#          (define them in ./tools/dotignore)         #
+dist
+############### End:   custom gitignore ###############
