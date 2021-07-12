@@ -90,7 +90,7 @@ function getConfiguration(argv): Configuration {
   const configPath = argv.config;
   let pathConfiguration;
 
-  const isAbsoluteConfigPath = configPath && /^[~/]/.exec(configPath as string) ? true : false;
+  const isAbsoluteConfigPath = !!(configPath && /^[~/]/.exec(configPath as string));
 
   if (isAbsoluteConfigPath) {
     const homeDir = require('os').homedir();

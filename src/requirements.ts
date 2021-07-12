@@ -5,9 +5,9 @@ import { RawResult, SoftwareConfiguration } from './types';
 export async function checkSoftware(software: SoftwareConfiguration = {}): Promise<RawResult[]> {
   const softwareList = normalizeConfig(software);
   const softwareData = await getVersionData(softwareList);
-  const softwareSatisifies = satisifies(softwareData);
+  const softwareSatisfies = satisifies(softwareData);
 
-  const results: RawResult[] = softwareSatisifies;
+  const results: RawResult[] = softwareSatisfies;
   return results;
 }
 
