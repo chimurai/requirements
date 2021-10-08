@@ -1,6 +1,6 @@
-const chalk = require('chalk');
+import chalk from 'chalk';
 
-module.exports = {
+export default {
   software: {
     // java: '>= 1.8.x',
     git: '~1.9.4 || 2.0.0 - 2.10.0',

@@ -1,10 +1,10 @@
-import * as fs from 'fs';
-import * as semver from 'semver';
-import * as chalk from 'chalk';
+import fs from 'fs';
+import semver from 'semver';
+import chalk from 'chalk';
 
-const FILENAME = 'requirements.config.js';
+const FILENAME = 'requirements.config.mjs';
 
-const TEMPLATE = `module.exports = {
+const TEMPLATE = `export default {
   software: {
     node: '^${semver.clean(process.version)}',
     nginx: {
@@ -22,7 +22,7 @@ const TEMPLATE = `module.exports = {
 
 export function scaffold() {
   if (hasExistingConfig()) {
-    throw new Error(`init failed. Found existing 'requirements.config.js'`);
+    throw new Error(`init failed. Found existing 'requirements.config.mjs'`);
   }
 
   fs.writeFileSync(FILENAME, TEMPLATE);

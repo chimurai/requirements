@@ -22,7 +22,7 @@ $ yarn add --dev requirements
 
 ## setup
 
-Scaffold a new `requirements.config.js` configuration file
+Scaffold a new `requirements.config.mjs` configuration file
 
 ```bash
 $ npx requirements --init
@@ -30,10 +30,10 @@ $ npx requirements --init
 
 ## config
 
-Configure the `requirements.config.js` file in your project root.
+Configure the `requirements.config.mjs` file in your project root.
 
 ```js
-module.exports = {
+export default {
   software: {
     node: '*',
     yarn: '~1.17.3',
@@ -53,7 +53,7 @@ module.exports = {
 
 ## check requirements
 
-Run `requirements` command in the project root. By default it will try to find the `requirements.config.js` file.
+Run `requirements` command in the project root. By default it will try to find the `requirements.config.mjs` file.
 
 ```bash
 $ npx requirements
@@ -75,9 +75,9 @@ $ npx requirements --help
 Options:
   --help, -h     Show help                                             [boolean]
   --version, -v  Show version number                                   [boolean]
-  --init, -i     Create a requirements.config.js file
+  --init, -i     Create a requirements.config.mjs file
   --config, -c   Path to the configuration file
-                                             [default: "requirements.config.js"]
+                                            [default: "requirements.config.mjs"]
   --force, -f    Succeeds even if not all requirements are satisfied
                                                       [boolean] [default: false]
   --quiet, -q    Only output when errors are present                   [boolean]
@@ -114,7 +114,7 @@ checkSoftware() returns an Array with results
 ```bash
 # test functionality
 yarn build
-node bin/requirements.js --config tests/requirements.config.js
+node bin/requirements.js --config tests/requirements.config.mjs
 
 # unit tests
 yarn test
@@ -124,4 +124,4 @@ yarn test
 
 The MIT License (MIT)
 
-Copyright (c) 2017-2020 Steven Chim
+Copyright (c) 2017-2021 Steven Chim

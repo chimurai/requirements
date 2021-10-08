@@ -1,6 +1,5 @@
-import * as fs from 'fs';
-import { isAllOK, getMessages } from '../results';
-import { RawResult } from '../types';
+import { isAllOK, getMessages } from '../results.js';
+import type { RawResult } from '../types';
 
 describe('results', () => {
   describe('all results OK', () => {

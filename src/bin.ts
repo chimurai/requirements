@@ -1,11 +1,14 @@
-import * as yargs from 'yargs';
-import * as path from 'path';
-import * as chalk from 'chalk';
-import { checkSoftware } from './requirements';
-import { renderTable, renderMessages } from './reporter';
-import { Configuration } from './types';
-import { scaffold } from './scaffold';
-import { isAllOK, getMessages } from './results';
+import yargs from 'yargs';
+import path from 'path';
+import chalk from 'chalk';
+import { checkSoftware } from './requirements.js';
+import { renderTable, renderMessages } from './reporter.js';
+import type { Configuration } from './types';
+import { scaffold } from './scaffold.js';
+import { isAllOK, getMessages } from './results.js';
+
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 
 export async function exec(_debug_argv_?) {
   const argv = _debug_argv_ ?? getArgv();
@@ -19,7 +22,7 @@ export async function exec(_debug_argv_?) {
     console.log(`🔍  Checking software requirements...`);
   }
 
-  const config = getConfiguration(argv);
+  const config = await getConfiguration(argv);
   let rawResults = await checkSoftware(config.software);
 
   const ALL_OK = isAllOK(rawResults);
@@ -52,19 +55,19 @@ export async function exec(_debug_argv_?) {
 }
 
 function getArgv() {
-  return yargs
+  return yargs(process.argv)
     .help('help')
     .alias('help', 'h')
     .version('version', require('../package.json').version)
     .alias('version', 'v')
     .options({
       init: {
-        description: 'Create a requirements.config.js file',
+        description: 'Create a requirements.config.mjs file',
         alias: 'i',
       },
       config: {
         description: 'Path to the configuration file',
-        default: 'requirements.config.js',
+        default: 'requirements.config.mjs',
         alias: 'c',
       },
       force: {
@@ -85,7 +88,7 @@ function getArgv() {
     }).argv;
 }
 
-function getConfiguration(argv): Configuration {
+async function getConfiguration(argv): Promise<Configuration> {
   const cwd = process.cwd();
   const configPath = argv.config;
   let pathConfiguration;
@@ -101,7 +104,8 @@ function getConfiguration(argv): Configuration {
   }
 
   try {
-    return require(pathConfiguration);
+    const config = await import(pathConfiguration);
+    return config.default;
   } catch (err) {
     throw new Error(`❌  Unable to find configuration file: '${chalk.bold(pathConfiguration)}'`);
   }
