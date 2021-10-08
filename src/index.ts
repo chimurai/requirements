@@ -1,4 +1,4 @@
-import { checkSoftware } from './requirements';
-import { renderTable } from './reporter';
+import { checkSoftware } from './requirements.js';
+import { renderTable } from './reporter.js';
 
 export { checkSoftware, renderTable };

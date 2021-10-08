@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "lib": ["es2015"],
-    "module": "commonjs",
+    "lib": ["ES2019"],
+    "module": "ES2020",
     "moduleResolution": "node",
-    "target": "es2015",
-    "declaration": true
+    "target": "ES2019",
+    "declaration": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["./src"],
   "exclude": ["./dist"]

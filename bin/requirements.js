@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
-const chalk = require('chalk');
-const { exec } = require('../dist/bin');
+import chalk from 'chalk';
+import { exec } from '../dist/bin.js';
 
 (async () => {
   try {

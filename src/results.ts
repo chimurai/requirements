@@ -1,4 +1,4 @@
-import { RawResult, Message } from './types';
+import type { RawResult, Message } from './types';
 
 export function isAllOK(rawResults: RawResult[]) {
   return rawResults
