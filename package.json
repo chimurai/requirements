@@ -46,9 +46,9 @@
     ]
   },
   "dependencies": {
-    "bin-version": "^5.0.0",
+    "bin-version": "^6.0.0",
     "chalk": "^4.0.0",
-    "log-symbols": "^4.0.0",
+    "log-symbols": "^5.0.0",
     "semver": "^7.3.5",
     "table": "^6.7.2",
     "yargs": "^17.2.1"
