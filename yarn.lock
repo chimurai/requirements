@@ -850,13 +850,13 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
-bin-version@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/bin-version/-/bin-version-5.0.0.tgz#5f9d9071c28f91f86f5b2631fb11651261160f12"
-  integrity sha512-9vxfJ6Pe1OUiNlTV3HSDAMbcdR8TUrh71O7fN9cuoIztOIdBqC73pBwx0maLsPLqrmr0eB9bpfMiJBgUtW0jPA==
+bin-version@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/bin-version/-/bin-version-6.0.0.tgz#08ecbe5fc87898b441425e145f9e105064d00315"
+  integrity sha512-nk5wEsP4RiKjG+vF+uG8lFsEn4d7Y6FVDamzzftSunXOoOcOOkzcWdKVlGgFFwlUQCj63SgnUkLLGF8v7lufhw==
   dependencies:
     execa "^5.0.0"
-    find-versions "^4.0.0"
+    find-versions "^5.0.0"
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -1299,12 +1299,12 @@ find-up@^4.0.0, find-up@^4.1.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
-find-versions@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/find-versions/-/find-versions-4.0.0.tgz#3c57e573bf97769b8cb8df16934b627915da4965"
-  integrity sha512-wgpWy002tA+wgmO27buH/9KzyEOQnKsG/R0yrcjPT9BOFm0zRBVQbZ95nRGXWMywS8YR5knRbpohio0bcJABxQ==
+find-versions@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/find-versions/-/find-versions-5.0.0.tgz#3e088dbc5083162c86fb36dbd7b84d64b9ee1e45"
+  integrity sha512-Jid3bdamPSNTb7r28PItNl/wm8frLj7NgEztJXK8UftodFRlynojEvUo4dyr5ftgfqgGhCF6DWaiJVFbpX3uPA==
   dependencies:
-    semver-regex "^3.1.2"
+    semver-regex "^4.0.0"
 
 form-data@^3.0.0:
   version "3.0.1"
@@ -1538,10 +1538,10 @@ is-typedarray@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
   integrity sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=
 
-is-unicode-supported@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/is-unicode-supported/-/is-unicode-supported-0.1.0.tgz#3f26c76a809593b52bfa2ecb5710ed2779b522a7"
-  integrity sha512-knxG2q4UC3u8stRGyAVJCOdxFmv5DZiRcdlIaAQXAbSfJya+OhopNotLQrstBhququ4ZpuKbDc/8S6mgXgPFPw==
+is-unicode-supported@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/is-unicode-supported/-/is-unicode-supported-1.1.0.tgz#9127b71f9fa82f52ca5c20e982e7bec0ee31ee1e"
+  integrity sha512-lDcxivp8TJpLG75/DpatAqNzOpDPSpED8XNtrpBHTdQ2InQ1PbW78jhwSxyxhhu+xbVSast2X38bwj8atwoUQA==
 
 isexe@^2.0.0:
   version "2.0.0"
@@ -2158,13 +2158,13 @@ lodash@4.x, lodash@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
-log-symbols@^4.0.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-4.1.0.tgz#3fbdbb95b4683ac9fc785111e792e558d4abd503"
-  integrity sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==
+log-symbols@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-5.0.0.tgz#7720d3c6a56c365e1f658916069ba18d941092ca"
+  integrity sha512-zBsSKauX7sM0kcqrf8VpMRPqcWzU6a/Wi7iEl0QlVSCiIZ4CctaLdfVdiZUn6q2/nenyt392qJqpw9FhNAwqxQ==
   dependencies:
     chalk "^4.1.0"
-    is-unicode-supported "^0.1.0"
+    is-unicode-supported "^1.0.0"
 
 log-update@^4.0.0:
   version "4.0.0"
@@ -2538,10 +2538,10 @@ semver-compare@^1.0.0:
   resolved "https://registry.yarnpkg.com/semver-compare/-/semver-compare-1.0.0.tgz#0dee216a1c941ab37e9efb1788f6afc5ff5537fc"
   integrity sha1-De4hahyUGrN+nvsXiPavxf9VN/w=
 
-semver-regex@^3.1.2:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/semver-regex/-/semver-regex-3.1.3.tgz#b2bcc6f97f63269f286994e297e229b6245d0dc3"
-  integrity sha512-Aqi54Mk9uYTjVexLnR67rTyBusmwd04cLkHy9hNvk3+G3nT2Oyg7E0l4XVbOaNwIvQ3hHeYxGcyEy+mKreyBFQ==
+semver-regex@^4.0.0:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/semver-regex/-/semver-regex-4.0.2.tgz#fd3124efe81647b33eb90a9de07cb72992424a02"
+  integrity sha512-xyuBZk1XYqQkB687hMQqrCP+J9bdJSjPpZwdmmNjyxKW1K3LDXxqxw91Egaqkh/yheBIVtKPt4/1eybKVdCx3g==
 
 semver@7.x, semver@^7.3.2, semver@^7.3.5:
   version "7.3.5"
