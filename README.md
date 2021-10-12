@@ -48,6 +48,14 @@ export default {
       flag: '-v', // custom version flag
     },
   },
+  // custom functions to verify requirements which are not related to software versions
+  // see ./tests/custom-check-ssh.config.mjs for an example
+  custom: {
+    'Example title for custom requirements check', {
+      fn: () => { throw new Error('throw Error when requirement not met.') },
+      errorMessage: 'This error message is shown when the above function throws Error',
+    }
+  }
 };
 ```
 
@@ -56,22 +64,22 @@ export default {
 Run `requirements` command in the project root. By default it will try to find the `requirements.config.mjs` file.
 
 ```bash
-$ npx requirements
+npx requirements
 ```
 
 Or use a custom path:
 
 ```bash
-$ npx requirements --config <filepath>
+npx requirements --config <filepath>
 ```
 
 ## CLI options
 
 ```bash
-$ npx requirements --help
+npx requirements --help
 ```
 
-```
+```shell
 Options:
   --help, -h     Show help                                             [boolean]
   --version, -v  Show version number                                   [boolean]
