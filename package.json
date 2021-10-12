@@ -37,7 +37,8 @@
     "lint:fix": "prettier --write \"**/*.{js,ts,md}\"",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage --coverageReporters=lcov",
-    "prepare": "yarn clean && yarn test && yarn build",
+    "prepare": "husky install",
+    "prepack": "yarn clean && yarn test && yarn build",
     "gitignore:update": "curl -L https://www.toptal.com/developers/gitignore/api/node --silent > .temp && cat tools/dotgitignore | cat - .temp > .gitignore && rm .temp"
   },
   "lint-staged": {
