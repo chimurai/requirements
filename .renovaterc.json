@@ -2,6 +2,7 @@
   "extends": [
     "config:base"
   ],
+  "dependencyDashboardApproval": true,
   "lockFileMaintenance": {
     "enabled": true,
     "recreateClosed": true
