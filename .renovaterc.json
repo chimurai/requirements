@@ -12,6 +12,7 @@
   "masterIssue": true,
   "stabilityDays": 7,
   "prCreation": "not-pending",
+  "separateMultipleMajor": "true",
   "separateMajorMinor": "true",
   "rebaseStalePrs": true,
   "schedule": ["every weekend"],
