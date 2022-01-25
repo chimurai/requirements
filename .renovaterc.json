@@ -9,6 +9,12 @@
   },
   "pinVersions": false,
   "groupName": "all",
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["jest$"],
+      "groupName": "jest packages"
+    }
+  ],
   "masterIssue": true,
   "stabilityDays": 7,
   "prCreation": "not-pending",
