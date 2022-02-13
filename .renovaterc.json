@@ -11,6 +11,12 @@
   "groupName": "all",
   "packageRules": [
     {
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "groupName": "devDependencies (non-major)",
+      "groupSlug": "dev-dependencies"
+    },
+    {
       "matchPackagePatterns": ["jest$"],
       "groupName": "jest packages"
     }
