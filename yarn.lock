@@ -927,13 +927,18 @@ chalk@^2.0.0:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
-chalk@^4.0.0, chalk@^4.1.0:
+chalk@^4.0.0:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
   integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
   dependencies:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
+
+chalk@^5.0.0:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.0.1.tgz#ca57d71e82bb534a296df63bbacc4a1c22b2a4b6"
+  integrity sha512-Fo07WOYGqMfCWHOzSXOt2CxDbC6skS/jO9ynEcmpANMoPrD+W1r1K6Vx7iNm+AQmETU1Xr2t+n8nzkV9t6xh3w==
 
 char-regex@^1.0.2:
   version "1.0.2"
@@ -1499,7 +1504,7 @@ is-typedarray@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
   integrity sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=
 
-is-unicode-supported@^1.0.0:
+is-unicode-supported@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/is-unicode-supported/-/is-unicode-supported-1.2.0.tgz#f4f54f34d8ebc84a46b93559a036763b6d3e1014"
   integrity sha512-wH+U77omcRzevfIG8dDhTS0V9zZyweakfD01FULl97+0EHiJTTZtJqxPSkIIo/SDPv/i07k/C9jAPY+jwLLeUQ==
@@ -2106,13 +2111,13 @@ lodash@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
-log-symbols@5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-5.0.0.tgz#7720d3c6a56c365e1f658916069ba18d941092ca"
-  integrity sha512-zBsSKauX7sM0kcqrf8VpMRPqcWzU6a/Wi7iEl0QlVSCiIZ4CctaLdfVdiZUn6q2/nenyt392qJqpw9FhNAwqxQ==
+log-symbols@5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-5.1.0.tgz#a20e3b9a5f53fac6aeb8e2bb22c07cf2c8f16d93"
+  integrity sha512-l0x2DvrW294C9uDCoQe1VSU4gf529FkSZ6leBl4TiqZH/e+0R7hSfHQBNut2mNygDgHwvYHfFLn6Oxb3VWj2rA==
   dependencies:
-    chalk "^4.1.0"
-    is-unicode-supported "^1.0.0"
+    chalk "^5.0.0"
+    is-unicode-supported "^1.1.0"
 
 log-update@^4.0.0:
   version "4.0.0"
