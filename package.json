@@ -31,8 +31,8 @@
     "requirements": "./bin/requirements.js"
   },
   "scripts": {
-    "clean": "rm -rf dist && rm -rf coverage",
-    "build": "tsc",
+    "clean": "rm -rf dist coverage tsconfig.tsbuildinfo",
+    "build": "tsc --build",
     "lint": "prettier --check \"**/*.{js,ts,md}\" || echo '🔧  Run: \"npm run lint:fix\" to fix issues'",
     "lint:fix": "prettier --write \"**/*.{js,ts,md}\"",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
