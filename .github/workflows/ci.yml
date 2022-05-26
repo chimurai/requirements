@@ -65,7 +65,7 @@ jobs:
       run: yarn build
 
     - name: yarn test
-      run: yarn test
+      run: yarn test --reporters="default" --reporters="github-actions"
 
       env:
         CI: true

@@ -36,7 +36,7 @@
     "lint": "prettier --check \"**/*.{js,ts,md}\" || echo '🔧  Run: \"npm run lint:fix\" to fix issues'",
     "lint:fix": "prettier --write \"**/*.{js,ts,md}\"",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
-    "coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage --coverageReporters=lcov",
+    "coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
     "prepare": "husky install",
     "prepack": "yarn clean && yarn test && yarn build",
     "gitignore:update": "curl -L https://www.toptal.com/developers/gitignore/api/node --silent > .temp && cat tools/dotgitignore | cat - .temp > .gitignore && rm .temp"
@@ -62,7 +62,7 @@
     "jest": "28.1.0",
     "lint-staged": "12.4.1",
     "prettier": "2.6.2",
-    "ts-jest": "28.0.2",
+    "ts-jest": "28.0.3",
     "ts-node": "10.7.0",
     "typescript": "4.6.4"
   }
