@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { jest } from '@jest/globals'
+import { jest } from '@jest/globals';
 import { exec } from '../bin';
 
 describe('bin', () => {
