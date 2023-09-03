@@ -7,7 +7,7 @@ import type { Configuration } from './types';
 import { scaffold } from './scaffold.js';
 import { isAllOK, getMessages } from './results.js';
 
-import { createRequire } from "module";
+import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
 export async function exec(_debug_argv_?) {

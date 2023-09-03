@@ -5,9 +5,9 @@ import type { RawResult, Message } from './types';
 
 export function renderMessages(messages: Message[] = []): string {
   const result = messages.map(({ bin, message }) => {
-      // https://github.com/junegunn/ansi256#reference-chart
-      const ANSI_ORANGE = 215;
-      return `${chalk.ansi256(ANSI_ORANGE)(`${bin}`)}:\n${message}\n`;
+    // https://github.com/junegunn/ansi256#reference-chart
+    const ANSI_ORANGE = 215;
+    return `${chalk.ansi256(ANSI_ORANGE)(`${bin}`)}:\n${message}\n`;
   });
 
   return result.join('\n');

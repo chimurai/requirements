@@ -9,7 +9,7 @@ export function isAllOK(rawResults: RawResult[]) {
 export function getMessages(rawResults: RawResult[]): Message[] {
   const notInstalledItems = rawResults.filter((item) => !item.installed && item.installMessage);
   const unsatisfiedInstalledItems = rawResults.filter(
-    (item) => !item.satisfies && item.updateMessage
+    (item) => !item.satisfies && item.updateMessage,
   );
 
   const messages = [...notInstalledItems, ...unsatisfiedInstalledItems].map((item) => {
