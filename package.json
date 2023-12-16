@@ -55,7 +55,7 @@
     "yargs": "^17.2.1"
   },
   "devDependencies": {
-    "@types/jest": "29.5.10",
+    "@types/jest": "29.5.11",
     "@types/node": "20.10.4",
     "@types/yargs": "17.0.32",
     "husky": "8.0.3",
