@@ -37,7 +37,7 @@
     "lint:fix": "prettier --write \"**/*.{js,ts,md}\"",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
-    "prepare": "husky install",
+    "prepare": "husky",
     "prepack": "yarn clean && yarn test && yarn build",
     "gitignore:update": "curl -L https://www.toptal.com/developers/gitignore/api/node --silent > .temp && cat tools/dotgitignore | cat - .temp > .gitignore && rm .temp"
   },
@@ -58,7 +58,7 @@
     "@types/jest": "29.5.12",
     "@types/node": "20.11.25",
     "@types/yargs": "17.0.32",
-    "husky": "8.0.3",
+    "husky": "9.0.11",
     "jest": "29.7.0",
     "lint-staged": "15.2.2",
     "prettier": "3.2.5",
