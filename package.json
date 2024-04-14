@@ -1,11 +1,14 @@
 {
   "name": "requirements",
-  "version": "1.4.1",
+  "version": "2.0.0-beta.0",
   "license": "MIT",
   "author": "chimurai",
   "homepage": "https://github.com/chimurai/requirements",
   "bugs": {
     "url": "https://github.com/chimurai/requirements/issues"
+  },
+  "publishConfig": {
+    "provenance": true
   },
   "repository": {
     "type": "git",
