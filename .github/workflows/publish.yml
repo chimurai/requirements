@@ -4,6 +4,8 @@ on:
     types: [prereleased, released]
 jobs:
   build-and-publish:
+    # prevents this action from running on forks
+    if: github.repository == 'chimurai/requirements'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -14,13 +16,16 @@ jobs:
         with:
           node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
+
       - name: Install Dependencies
         run: yarn install
+
       - name: Publish to NPM (beta)
         if: "github.event.release.prerelease"
         run: npm publish --provenance --access public --tag beta
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Publish to NPM (stable)
         if: "!github.event.release.prerelease"
         run: npm publish --provenance --access public
