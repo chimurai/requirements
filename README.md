@@ -132,4 +132,4 @@ yarn test
 
 The MIT License (MIT)
 
-Copyright (c) 2017-2021 Steven Chim
+Copyright (c) 2017-2024 Steven Chim

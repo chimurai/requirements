@@ -1,6 +1,6 @@
 {
   "name": "requirements",
-  "version": "2.0.0-beta.2",
+  "version": "2.0.0-beta.3",
   "license": "MIT",
   "author": "chimurai",
   "homepage": "https://github.com/chimurai/requirements",
@@ -21,7 +21,7 @@
     "checker"
   ],
   "engines": {
-    "node": "^16.0.0 || ^18.0.0 || >= 20.0.0"
+    "node": "^18.0.0 || >= 20.0.0"
   },
   "type": "module",
   "exports": "./dist/index.js",
