@@ -1,9 +1,9 @@
-name: Publish Package to npmjs
+name: publish to npmjs
 on:
   release:
-    types: [published]
+    types: [prereleased, released]
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -21,7 +21,7 @@ jobs:
         run: npm publish --provenance --access public --tag beta
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Publish to NPM (release)
+      - name: Publish to NPM (stable)
         if: "!github.event.release.prerelease"
         run: npm publish --provenance --access public
         env:
