@@ -5,13 +5,13 @@ import type { RawResult, SoftwareConfiguration } from '../types';
 export async function checkSoftware(software: SoftwareConfiguration = {}): Promise<RawResult[]> {
   const softwareList = normalizeConfig(software);
   const softwareData = await getVersionData(softwareList);
-  const softwareSatisifies = satisifies(softwareData);
+  const softwareSatisfies = satisfies(softwareData);
 
-  const results: RawResult[] = softwareSatisifies;
+  const results: RawResult[] = softwareSatisfies;
   return results;
 }
 
-export function satisifies(entries = []): RawResult[] {
+export function satisfies(entries = []): RawResult[] {
   return entries.map((item) => {
     if (item.installed) {
       const satisfies = semver.satisfies(item.version, item.semver);
