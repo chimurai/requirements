@@ -50,7 +50,7 @@
     ]
   },
   "dependencies": {
-    "bin-version": "^6.0.0",
+    "binary-version": "^7.1.0",
     "chalk": "^5.0.0",
     "log-symbols": "6.0.0",
     "semver": "^7.5.2",
