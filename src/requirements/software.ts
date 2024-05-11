@@ -1,4 +1,4 @@
-import binVersion from 'bin-version';
+import binaryVersion from 'binary-version';
 import semver from 'semver';
 import type { RawResult, SoftwareConfiguration } from '../types';
 
@@ -30,7 +30,7 @@ export async function getVersionData(softwareList: RawResult[] = []): Promise<Ra
 
     try {
       const maybeBinVersionArgs = software.flag ? { args: [software.flag] } : undefined;
-      const version = await binVersion(software.bin, maybeBinVersionArgs);
+      const version = await binaryVersion(software.bin, maybeBinVersionArgs);
       result = { ...result, installed: true, version };
     } catch (err) {
       result = { ...result, installed: false, version: undefined };
