@@ -52,7 +52,7 @@
   "dependencies": {
     "binary-version": "^7.1.0",
     "chalk": "^5.0.0",
-    "log-symbols": "6.0.0",
+    "log-symbols": "7.0.0",
     "semver": "^7.5.2",
     "table": "^6.7.2",
     "yargs": "^17.2.1"
