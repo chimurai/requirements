@@ -20,8 +20,8 @@ export function renderTable(rawResults: RawResult[] = []) {
     const pass = satisfies
       ? `${logSymbols.success} ${chalk.dim('OK')}`
       : optional
-      ? `${logSymbols.warning} ${chalk.dim('NOK (optional)')}`
-      : `${logSymbols.error} ${chalk.dim('NOK')}`;
+        ? `${logSymbols.warning} ${chalk.dim('NOK (optional)')}`
+        : `${logSymbols.error} ${chalk.dim('NOK')}`;
 
     return {
       bin: optional ? chalk.dim(`${bin}`) : bin,
