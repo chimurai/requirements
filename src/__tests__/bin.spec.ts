@@ -59,7 +59,7 @@ describe('bin', () => {
 
     it('should execute nok tests', async () => {
       await expect(exec({ config: './tests/ok_some.config.mjs' })).rejects.toMatchInlineSnapshot(
-        `[Error: ❌  Not all requirements are satisfied]`
+        `[Error: ❌  Not all requirements are satisfied]`,
       );
     });
 
@@ -77,13 +77,13 @@ describe('bin', () => {
   describe('Custom Checks', () => {
     it('should execute nok tests', async () => {
       await expect(
-        exec({ config: './tests/custom-check-always_fail.mjs' })
+        exec({ config: './tests/custom-check-always_fail.mjs' }),
       ).rejects.toMatchInlineSnapshot(`[Error: ❌  Not all custom requirements are satisfied]`);
     });
 
     it('should not reject with --force', async () => {
       await expect(
-        exec({ config: './tests/custom-check-always_fail.mjs', force: true })
+        exec({ config: './tests/custom-check-always_fail.mjs', force: true }),
       ).resolves.toBe(undefined);
     });
   });
