@@ -1,13 +1,11 @@
 {
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:recommended"],
   "dependencyDashboardApproval": true,
   "lockFileMaintenance": {
     "enabled": true,
-    "recreateClosed": true
+    "recreateWhen": "always"
   },
-  "pinVersions": false,
+  "rangeStrategy": "replace",
   "groupName": "all",
   "packageRules": [
     {
@@ -17,16 +15,16 @@
       "groupSlug": "dev-dependencies"
     },
     {
-      "matchPackagePatterns": ["jest$"],
-      "groupName": "jest packages"
+      "groupName": "jest packages",
+      "matchPackageNames": ["/jest$/"]
     }
   ],
-  "masterIssue": true,
-  "stabilityDays": 7,
+  "dependencyDashboard": true,
+  "minimumReleaseAge": "7 days",
   "prCreation": "not-pending",
-  "separateMultipleMajor": "true",
-  "separateMajorMinor": "true",
-  "rebaseStalePrs": true,
+  "separateMultipleMajor": true,
+  "separateMajorMinor": true,
+  "rebaseWhen": "behind-base-branch",
   "schedule": ["every weekend"],
   "timezone": "Europe/Amsterdam"
 }
