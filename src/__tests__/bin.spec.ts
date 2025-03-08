@@ -1,5 +1,6 @@
+import { expect, it, describe, beforeEach, vi } from 'vitest';
+
 import fs from 'fs';
-import { jest } from '@jest/globals';
 import { exec } from '../bin';
 
 describe('bin', () => {
@@ -8,10 +9,10 @@ describe('bin', () => {
   let errorSpy;
 
   beforeEach(() => {
-    logSpy = jest.spyOn(console, 'log');
-    debugSpy = jest.spyOn(console, 'debug');
-    errorSpy = jest.spyOn(console, 'error');
-    jest.resetAllMocks();
+    logSpy = vi.spyOn(console, 'log');
+    debugSpy = vi.spyOn(console, 'debug');
+    errorSpy = vi.spyOn(console, 'error');
+    vi.resetAllMocks();
   });
 
   it('should execute ok tests', async () => {
