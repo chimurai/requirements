@@ -1,3 +1,5 @@
+import { expect, it, describe } from 'vitest';
+
 import { isAllOK, getMessages } from '../results.js';
 import type { RawResult } from '../types';
 

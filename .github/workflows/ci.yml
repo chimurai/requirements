@@ -65,7 +65,7 @@ jobs:
       run: yarn build
 
     - name: yarn test
-      run: yarn test --reporters="default" --reporters="github-actions"
+      run: yarn test --reporter="default" --reporter="github-actions"
 
       env:
         CI: true
@@ -101,6 +101,7 @@ jobs:
       run: yarn coverage
 
     - name: Coveralls
-      uses: coverallsapp/github-action@master
+      uses: coverallsapp/github-action@v2
       with:
         github-token: ${{ secrets.github_token }}
+        format: clover

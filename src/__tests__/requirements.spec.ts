@@ -1,3 +1,5 @@
+import { expect, it, describe } from 'vitest';
+
 import type { SoftwareConfiguration } from '../types';
 import { normalizeConfig, checkSoftware } from '../requirements/software.js';
 
