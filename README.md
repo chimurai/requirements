@@ -2,7 +2,6 @@
 
 [![npm](https://img.shields.io/npm/v/requirements?style=flat-square)](https://www.npmjs.com/package/requirements)
 [![coveralls](https://img.shields.io/coveralls/chimurai/requirements.svg?style=flat-square)](https://coveralls.io/r/chimurai/requirements)
-[![dependency Status](https://img.shields.io/david/chimurai/requirements.svg?style=flat-square)](https://david-dm.org/chimurai/requirements#info=dependencies)
 [![snyk](https://snyk.io/test/npm/requirements/badge.svg?style=flat-square)](https://snyk.io/test/npm/requirements)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
