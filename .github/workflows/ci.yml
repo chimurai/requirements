@@ -25,7 +25,7 @@ jobs:
 
     - name: yarn install
       if: steps.yarn-cache.outputs.cache-hit != 'true' # Over here!
-      run: yarn install
+      run: yarn install --frozen-lockfile
 
     - name: yarn lint
       run: yarn lint
@@ -59,7 +59,7 @@ jobs:
 
     - name: yarn install
       if: steps.yarn-cache.outputs.cache-hit != 'true' # Over here!
-      run: yarn install
+      run: yarn install --frozen-lockfile
 
     - name: yarn build
       run: yarn build
@@ -92,7 +92,7 @@ jobs:
 
     - name: yarn install
       if: steps.yarn-cache.outputs.cache-hit != 'true' # Over here!
-      run: yarn install
+      run: yarn install --frozen-lockfile
 
     - name: yarn build
       run: yarn build
