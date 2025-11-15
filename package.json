@@ -61,11 +61,11 @@
   "devDependencies": {
     "@types/node": "24.10.0",
     "@types/yargs": "17.0.34",
-    "@vitest/coverage-v8": "3.2.4",
+    "@vitest/coverage-v8": "4.0.8",
     "husky": "9.1.7",
     "lint-staged": "16.2.6",
     "prettier": "3.6.2",
     "typescript": "5.9.3",
-    "vitest": "3.2.4"
+    "vitest": "4.0.8"
   }
 }
