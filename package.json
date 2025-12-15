@@ -59,13 +59,13 @@
     "yargs": "^18.0.0"
   },
   "devDependencies": {
-    "@types/node": "24.10.1",
+    "@types/node": "24.10.2",
     "@types/yargs": "17.0.35",
-    "@vitest/coverage-v8": "4.0.14",
+    "@vitest/coverage-v8": "4.0.15",
     "husky": "9.1.7",
     "lint-staged": "16.2.7",
-    "prettier": "3.7.3",
+    "prettier": "3.7.4",
     "typescript": "5.9.3",
-    "vitest": "4.0.14"
+    "vitest": "4.0.15"
   }
 }
