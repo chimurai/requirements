@@ -37,8 +37,8 @@
   "scripts": {
     "clean": "rm -rf dist coverage tsconfig.tsbuildinfo",
     "build": "tsc --build",
-    "lint": "prettier --check \"**/*.{js,ts,md}\" || echo '🔧  Run: \"npm run lint:fix\" to fix issues'",
-    "lint:fix": "prettier --write \"**/*.{js,ts,md}\"",
+    "lint": "oxfmt --check \"**/*.{js,ts,md}\" || echo '🔧  Run: \"npm run lint:fix\" to fix issues'",
+    "lint:fix": "oxfmt --write \"**/*.{js,ts,md}\"",
     "test": "vitest run",
     "coverage": "vitest run --coverage",
     "prepare": "husky",
@@ -47,7 +47,7 @@
   },
   "lint-staged": {
     "**/*.{js,ts,md}": [
-      "prettier --write"
+      "oxfmt --write"
     ]
   },
   "dependencies": {
@@ -64,7 +64,7 @@
     "@vitest/coverage-v8": "4.0.15",
     "husky": "9.1.7",
     "lint-staged": "16.2.7",
-    "prettier": "3.7.4",
+    "oxfmt": "^0.41.0",
     "typescript": "5.9.3",
     "vitest": "4.0.15"
   }
