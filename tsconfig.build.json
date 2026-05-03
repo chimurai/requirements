@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "lib": ["ES2020"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "esnext",
+    "incremental": true,
+    "composite": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "types": ["node"]
+  },
+  "include": ["./src"],
+  "exclude": ["./dist", "**/*.spec.ts"]
+}

@@ -1,4 +1,4 @@
-import type { RawResult, Message } from './types';
+import type { RawResult, Message } from './types.js';
 
 export function isAllOK(rawResults: RawResult[]) {
   return rawResults
@@ -14,7 +14,7 @@ export function getMessages(rawResults: RawResult[]): Message[] {
 
   const messages = [...notInstalledItems, ...unsatisfiedInstalledItems].map((item) => {
     const bin: string = item.bin;
-    const message: string = item.installMessage || item.updateMessage;
+    const message: string = (item.installMessage || item.updateMessage) ?? '';
     return { bin, message };
   });
 

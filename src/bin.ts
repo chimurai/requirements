@@ -4,7 +4,7 @@ import chalk from 'chalk';
 import { checkSoftware } from './requirements/software.js';
 import { checkCustom } from './requirements/custom.js';
 import { renderTable, renderMessages } from './reporter.js';
-import type { Configuration } from './types';
+import type { Configuration } from './types.js';
 import { scaffold } from './scaffold.js';
 import { isAllOK, getMessages } from './results.js';
 
