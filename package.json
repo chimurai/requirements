@@ -35,8 +35,8 @@
     "requirements": "bin/requirements.js"
   },
   "scripts": {
-    "clean": "rm -rf dist coverage tsconfig.tsbuildinfo",
-    "build": "tsc --build",
+    "clean": "rm -rf dist coverage tsconfig*.tsbuildinfo",
+    "build": "tsc --build tsconfig.build.json",
     "lint": "oxfmt --check \"**/*.{js,ts,md}\" || echo '🔧  Run: \"npm run lint:fix\" to fix issues'",
     "lint:fix": "oxfmt --write \"**/*.{js,ts,md}\"",
     "test": "vitest run",
@@ -59,7 +59,7 @@
     "yargs": "^18.0.0"
   },
   "devDependencies": {
-    "@types/node": "24.12.0",
+    "@types/node": "25.6.0",
     "@types/yargs": "17.0.35",
     "@vitest/coverage-v8": "4.1.2",
     "husky": "9.1.7",

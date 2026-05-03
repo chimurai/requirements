@@ -1,7 +1,7 @@
 import { table, getBorderCharacters } from 'table';
 import logSymbols from 'log-symbols';
 import chalk from 'chalk';
-import type { RawResult, Message } from './types';
+import type { RawResult, Message } from './types.js';
 
 export function renderMessages(messages: Message[] = []): string {
   const result = messages.map(({ bin, message }) => {

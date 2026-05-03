@@ -1,6 +1,6 @@
 import binaryVersion from 'binary-version';
 import semver from 'semver';
-import type { RawResult, SoftwareConfiguration } from '../types';
+import type { RawResult, SoftwareConfiguration } from '../types.js';
 
 export async function checkSoftware(software: SoftwareConfiguration = {}): Promise<RawResult[]> {
   const softwareList = normalizeConfig(software);
@@ -11,7 +11,7 @@ export async function checkSoftware(software: SoftwareConfiguration = {}): Promi
   return results;
 }
 
-export function satisfies(entries = []): RawResult[] {
+export function satisfies(entries: RawResult[] = []): RawResult[] {
   return entries.map((item) => {
     if (item.installed) {
       const satisfies = semver.satisfies(item.version, item.semver);

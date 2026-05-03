@@ -1,7 +1,7 @@
-import { CustomChecks } from '../types';
+import { CustomChecks } from '../types.js';
 
 export async function checkCustom(customChecks: CustomChecks = {}) {
-  let results = [];
+  let results: { passed: boolean; name: string; errorMessage: string; error?: unknown }[] = [];
 
   for await (const [name, { fn, errorMessage }] of Object.entries(customChecks)) {
     const item = { name, errorMessage };
