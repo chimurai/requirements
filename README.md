@@ -110,7 +110,7 @@ checkSoftware() returns an Array with results
     bin: 'node',
     semver: '*',
     installed: true,
-    version: '12.8.1',
+    version: '24.11.0',
     satisfies: true,
   },
 ];
