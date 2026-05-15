@@ -3,9 +3,9 @@ import chalk from 'chalk';
 export default {
   software: {
     // java: '>= 1.8.x',
-    git: '~1.9.4 || 2.0.0 - 2.10.0',
-    node: '8 || 10 || 12',
-    npm: '>= 6.x',
+    git: '~1.9.4 || 2.0.0 - 2.53.0',
+    node: '^22.0.0 || >= 24.0.0',
+    npm: '>= 11.x',
     yarn: {
       semver: '1.16.x',
       updateMessage: `Outdated 'yarn' found.\nRun '${chalk.cyan('brew upgrade yarn')}' to update.`,
