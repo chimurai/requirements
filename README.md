@@ -50,11 +50,13 @@ export default {
   // custom functions to verify requirements which are not related to software versions
   // see ./tests/custom-check-ssh.config.mjs for an example
   custom: {
-    'Example title for custom requirements check', {
-      fn: () => { throw new Error('throw Error when requirement not met.') },
+    'Example title for custom requirements check': {
+      fn: () => {
+        throw new Error('throw Error when requirement not met.');
+      },
       errorMessage: 'This error message is shown when the above function throws Error',
-    }
-  }
+    },
+  },
 };
 ```
 
