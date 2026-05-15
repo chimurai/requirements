@@ -23,7 +23,7 @@
   "engines": {
     "node": "^22.0.0 || ^24.0.0 || >= 26.0.0"
   },
-  "packageManager": "yarn@1.22.22",
+  "packageManager": "npm@11.12.1",
   "type": "module",
   "exports": "./dist/index.js",
   "types": "dist/index.d.ts",
@@ -42,7 +42,7 @@
     "test": "vitest run",
     "coverage": "vitest run --coverage",
     "prepare": "husky",
-    "prepack": "yarn clean && yarn test && yarn build",
+    "prepack": "npm run clean && npm test && npm run build",
     "gitignore:update": "curl -L https://www.toptal.com/developers/gitignore/api/node --silent > .temp && cat tools/dotgitignore | cat - .temp > .gitignore && rm .temp"
   },
   "lint-staged": {

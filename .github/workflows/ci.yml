@@ -16,19 +16,19 @@ jobs:
         node-version: 24.x
 
     - uses: actions/cache@v5
-      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      id: npm-cache # use this to check for `cache-hit` (`steps.npm-cache.outputs.cache-hit != 'true'`)
       with:
         path: '**/node_modules'
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-yarn-
+          ${{ runner.os }}-npm-
 
-    - name: yarn install
-      if: steps.yarn-cache.outputs.cache-hit != 'true' # Over here!
-      run: yarn install --frozen-lockfile
+    - name: npm ci
+      if: steps.npm-cache.outputs.cache-hit != 'true' # Over here!
+      run: npm ci --ignore-scripts
 
-    - name: yarn lint
-      run: yarn lint
+    - name: npm lint
+      run: npm run lint
 
       env:
         CI: true
@@ -50,22 +50,22 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - uses: actions/cache@v5
-      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      id: npm-cache # use this to check for `cache-hit` (`steps.npm-cache.outputs.cache-hit != 'true'`)
       with:
         path: '**/node_modules'
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-yarn-
+          ${{ runner.os }}-npm-
 
-    - name: yarn install
-      if: steps.yarn-cache.outputs.cache-hit != 'true' # Over here!
-      run: yarn install --frozen-lockfile
+    - name: npm ci
+      if: steps.npm-cache.outputs.cache-hit != 'true' # Over here!
+      run: npm ci --ignore-scripts
 
-    - name: yarn build
-      run: yarn build
+    - name: npm build
+      run: npm run build
 
-    - name: yarn test
-      run: yarn test --reporter="default" --reporter="github-actions"
+    - name: npm test
+      run: npm test -- --reporter="default" --reporter="github-actions"
 
       env:
         CI: true
@@ -83,22 +83,22 @@ jobs:
         node-version: 24.x
 
     - uses: actions/cache@v5
-      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      id: npm-cache # use this to check for `cache-hit` (`steps.npm-cache.outputs.cache-hit != 'true'`)
       with:
         path: '**/node_modules'
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-yarn-
+          ${{ runner.os }}-npm-
 
-    - name: yarn install
-      if: steps.yarn-cache.outputs.cache-hit != 'true' # Over here!
-      run: yarn install --frozen-lockfile
+    - name: npm ci
+      if: steps.npm-cache.outputs.cache-hit != 'true' # Over here!
+      run: npm ci --ignore-scripts
 
-    - name: yarn build
-      run: yarn build
+    - name: npm build
+      run: npm run build
 
-    - name: yarn coverage
-      run: yarn coverage
+    - name: npm coverage
+      run: npm run coverage
 
     - name: Coveralls
       uses: coverallsapp/github-action@v2

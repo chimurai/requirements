@@ -15,10 +15,6 @@ Validate your project's software requirements.
 $ npm install -D requirements
 ```
 
-```bash
-$ yarn add --dev requirements
-```
-
 ## setup
 
 Scaffold a new `requirements.config.mjs` configuration file
@@ -35,7 +31,7 @@ Configure the `requirements.config.mjs` file in your project root.
 export default {
   software: {
     node: '*',
-    yarn: '~1.17.3',
+    npm: '>= 11.x',
     nginx: {
       semver: '>= 1.16.x',
       optional: true, // optional (won't fail)
@@ -120,11 +116,11 @@ checkSoftware() returns an Array with results
 
 ```bash
 # test functionality
-yarn build
+npm run build
 node bin/requirements.js --config tests/requirements.config.mjs
 
 # unit tests
-yarn test
+npm test
 ```
 
 ## license

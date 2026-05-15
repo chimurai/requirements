@@ -5,10 +5,9 @@ export default {
     // java: '>= 1.8.x',
     git: '~1.9.4 || 2.0.0 - 2.53.0',
     node: '^22.0.0 || >= 24.0.0',
-    npm: '>= 11.x',
-    yarn: {
-      semver: '1.16.x',
-      updateMessage: `Outdated 'yarn' found.\nRun '${chalk.cyan('brew upgrade yarn')}' to update.`,
+    npm: {
+      semver: '>= 11.x',
+      updateMessage: `Outdated 'npm' found.\nRun 'npm install -g npm@latest' to update.`,
     },
     mvn: '^3.x',
     nginx: {

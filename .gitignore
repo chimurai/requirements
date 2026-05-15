@@ -1,4 +1,4 @@
-# Generated with "yarn gitignore:update"
+# Generated with "npm run gitignore:update"
 
 ############### Start: custom gitignore ###############
 #          (define them in ./tools/dotignore)         #
