@@ -12,6 +12,8 @@ jobs:
       id-token: write  # Required for OIDC
     steps:
       - uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v6
         with:
           node-version: '24.x'
