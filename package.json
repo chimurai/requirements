@@ -59,12 +59,12 @@
     "yargs": "^18.0.0"
   },
   "devDependencies": {
-    "@types/node": "25.9.4",
+    "@types/node": "26.1.1",
     "@types/yargs": "17.0.35",
     "@vitest/coverage-v8": "4.1.9",
     "husky": "9.1.7",
     "lint-staged": "17.0.8",
-    "oxfmt": "^0.57.0",
+    "oxfmt": "0.57.0",
     "typescript": "6.0.3",
     "vitest": "4.1.9"
   }
