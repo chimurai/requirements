@@ -19,6 +19,8 @@ $ npm install -D requirements
 $ yarn add --dev requirements
 ```
 
+Node.js 22 users must use Node.js 22.12.0 or later. Node.js 24 and 26+ are also supported.
+
 ## setup
 
 Scaffold a new `requirements.config.mjs` configuration file
