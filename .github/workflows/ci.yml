@@ -13,7 +13,7 @@ jobs:
     - name: Use Node.js 24.x
       uses: actions/setup-node@v7
       with:
-        node-version: 24.x
+        node-version: 26.x
 
     - uses: actions/cache@v6
       id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
@@ -80,7 +80,7 @@ jobs:
     - name: Use Node.js 24.x
       uses: actions/setup-node@v7
       with:
-        node-version: 24.x
+        node-version: 26.x
 
     - uses: actions/cache@v6
       id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
