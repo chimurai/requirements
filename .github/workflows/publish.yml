@@ -16,7 +16,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v7
         with:
-          node-version: '24.x'
+          node-version: '26.x'
 
       # Ensure npm 11.5.1 or later is installed
       - name: Update npm
