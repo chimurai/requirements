@@ -19,7 +19,9 @@
       "matchPackageNames": ["/jest$/"]
     }
   ],
-  "dependencyDashboard": true,
+  "dependencyDashboard": {
+    "enabled": true
+  },
   "minimumReleaseAge": "7 days",
   "prCreation": "not-pending",
   "separateMultipleMajor": true,
